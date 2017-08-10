@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
-import { Accordion, Icon } from 'semantic-ui-react'
-
+import { Modal, Header } from 'semantic-ui-react'
 
 export default class UserPortfolio extends Component {
   constructor(){
     super()
+    this.state = {
+      moreInfoModal: true
+    }
   }
 
   accordion = () => {
     let acc = document.getElementsByClassName("accordion");
-    console.log(acc.length, "acc")
 
     for (let i = 0; i < acc.length; i++) {
-      console.log(i, "acc")
       acc[i].onclick = function(){
         let panel = this.nextElementSibling;
         if (panel.style.display === "block") {
@@ -24,20 +24,31 @@ export default class UserPortfolio extends Component {
     }
   }
 
+  handleMoreInfoClick = () => {
+    debugger
+  }
+
   render(){
     this.accordion()
     return(
       <div>
         <button className="accordion">{this.props.equityInfo.symbol}   {this.props.equityInfo.price}</button>
           <div className="panel">
-            <p>Testing</p>
+            <div className="number-of-shares">
+              <p>Number of shares: </p>
+            </div>
+            <table>
+              <tr>
+                <th id="market-value">
+                  Market Value:
+                </th>
+                <td id="more-info" onClick={this.handleMoreInfoClick}>
+                  More Info
+                </td>
+              </tr>
+            </table>
           </div>
       </div>
     )
   }
 }
-
-// <div>
-//   <h1>{this.props.equityInfo.symbol}</h1>
-//   <p>{this.props.equityInfo.price}</p>
-// </div>

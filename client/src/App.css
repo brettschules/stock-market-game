@@ -22,3 +22,8 @@ div.panel {
   background-color: white;
   display: none;
 }
+
+th, td {
+  padding: 20px;
+  text-align: left;
+}

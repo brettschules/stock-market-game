@@ -8,7 +8,7 @@ const ONEMINUTEINVERVALS = "&interval=1min&apikey="
   const getLatestStockPrice = (obj) => {
     let first;
     for (var i in obj) {
-    if (obj.hasOwnProperty(i) && typeof(i) !== 'function') {
+      if (obj.hasOwnProperty(i) && typeof(i) !== 'function') {
         first = obj[i];
         break;
       }
