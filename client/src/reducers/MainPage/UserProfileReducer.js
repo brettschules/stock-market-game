@@ -1,4 +1,4 @@
-export default function userProfileReducer(state = {loading: false, equityInfo:[{symbol: "", price: ""}] }
+export default function fetchEquityAlpha(state = {loading: false, equityInfo:[{symbol: "", price: ""}] }
   , action) {
   switch (action.type) {
   case 'LOADINGEQUITYINFO':
@@ -7,8 +7,6 @@ export default function userProfileReducer(state = {loading: false, equityInfo:[
     let price = action.price
     let symbol = action.symbol
     let equityArray = [...state.equityInfo, {price: price, symbol: symbol}]
-
-
     return {loading: false, equityInfo: equityArray}
     break;
   default:

@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { Modal, Header } from 'semantic-ui-react'
+import MoreInfoModal from './MoreInfoModal'
 
 export default class UserPortfolio extends Component {
   constructor(){
     super()
     this.state = {
-      moreInfoModal: true
+      moreInfoModal: false
     }
   }
 
@@ -25,7 +26,15 @@ export default class UserPortfolio extends Component {
   }
 
   handleMoreInfoClick = () => {
-    debugger
+    if (this.state.moreInfoModal === false) {
+      this.setState({
+        moreInfoModal: true
+      })
+    } else {
+      this.setState({
+        moreInfoModal: false
+      })
+    }
   }
 
   render(){
@@ -48,6 +57,7 @@ export default class UserPortfolio extends Component {
               </tr>
             </table>
           </div>
+          <MoreInfoModal open={this.state.moreInfoModal}/>
       </div>
     )
   }

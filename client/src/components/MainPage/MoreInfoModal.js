@@ -1,8 +1,9 @@
 import React from 'react'
 import { Button, Header, Image, Modal } from 'semantic-ui-react'
 
-const moreInfoModal = () => {
-<Modal trigger={true}>
+const MoreInfoModal = ({open}) => {
+  return (
+<Modal open={open}>
     <Modal.Header>Select a Photo</Modal.Header>
     <Modal.Content image>
       <Image wrapped size='medium' src='/assets/images/avatar/large/rachel.png' />
@@ -13,6 +14,7 @@ const moreInfoModal = () => {
       </Modal.Description>
     </Modal.Content>
   </Modal>
+)
 }
 
-export default moreInfoModal
+export default MoreInfoModal
