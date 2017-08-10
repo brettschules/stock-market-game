@@ -10,15 +10,15 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Grid divided='vertically'>
-          <Grid.Row columns={3}>
-          <Grid.Column>
+        <Grid divided='vertically' >
+          <Grid.Row columns={3} >
+          <Grid.Column  >
             <UserProfile />
           </Grid.Column>
-          <Grid.Column>
+          <Grid.Column >
             <NetValueChart />
           </Grid.Column>
-          <Grid.Column>
+          <Grid.Column >
             <UserPortfolioBody />
           </Grid.Column>
           </Grid.Row>
