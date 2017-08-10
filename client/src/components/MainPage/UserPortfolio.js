@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Modal, Header } from 'semantic-ui-react'
 import MoreInfoModal from './MoreInfoModal'
-import { Accordion, Icon } from 'semantic-ui-react'
+import { Accordion, Icon, Button } from 'semantic-ui-react'
 
 
 export default class UserPortfolio extends Component {
@@ -13,15 +13,13 @@ export default class UserPortfolio extends Component {
   }
 
   handleMoreInfoClick = () => {
-    if (this.state.moreInfoModal === false) {
-      this.setState({
-        moreInfoModal: true
-      })
-    } else {
-      this.setState({
-        moreInfoModal: false
-      })
-    }
+    if (this.state.moreInfoModal === false)
+      this.setState({ moreInfoModal: true })
+  }
+
+  handleMoreInfoClose = () => {
+    if (this.state.moreInfoModal)
+      this.setState({ moreInfoModal: false })
   }
 
   render(){
@@ -34,18 +32,21 @@ export default class UserPortfolio extends Component {
         </Accordion.Title>
         <Accordion.Content>
         <table>
+          <th>
+            Number of Shares:
+          </th>
           <tr>
             <th id="market-value">
               Market Value:
             </th>
             <td id="more-info" onClick={this.handleMoreInfoClick}>
-              More Info
+              <Button>More Info</Button>
             </td>
           </tr>
         </table>
         </Accordion.Content>
         </Accordion>
-        <MoreInfoModal open={this.state.moreInfoModal}/>
+        <MoreInfoModal open={this.state.moreInfoModal} handleMoreInfoClose={this.handleMoreInfoClose} equitySymbol={this.props.equityInfo.symbol}/>
       </div>
     )
   }

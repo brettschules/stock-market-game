@@ -12,7 +12,7 @@ class UserPortfolioBody extends Component{
   constructor(){
     super()
     this.state ={
-      tickers: ["KO", "APU", "VZ", "BABA"]
+      tickers: ["KO", "APU", "VZ", "BABA", "AAPL"]
     }
   }
 
@@ -44,7 +44,6 @@ class UserPortfolioBody extends Component{
     )
   }
 }
-
 
 function mapStateToProps(state) {
   return {
