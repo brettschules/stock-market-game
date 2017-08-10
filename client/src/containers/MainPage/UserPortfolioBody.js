@@ -19,10 +19,6 @@ class UserPortfolioBody extends Component{
       )
   }
 
-  fetchEveryMinute = () => {
-
-  }
-
   componentDidMount() {
     this.fetchEquitesAlpha()
   }
@@ -31,17 +27,21 @@ class UserPortfolioBody extends Component{
     console.log(this.props.equityInfo, "dfsah")
     return(
       <div>
-        <ReactInterval timeout={100000} enabled={true}
+        <div>
+        <ReactInterval timeout={100500} enabled={true}
           callback={() => this.fetchEquitesAlpha()}
         />
-        <h1>Hello</h1>
-        {this.props.equityInfo.map(equity =>
-          <UserPortfolio equityInfo={equity} />
-        )}
+        </div>
+        <div>
+          {this.props.equityInfo.map(equity =>
+            <UserPortfolio equityInfo={equity} />
+          )}
+        </div>
       </div>
     )
   }
 }
+
 
 function mapStateToProps(state) {
   return {
