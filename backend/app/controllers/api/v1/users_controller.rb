@@ -8,6 +8,7 @@ class Api::V1::AuthController < UsersController
   end
 
   def create
+    
   end
 
   def edit
