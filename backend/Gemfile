@@ -19,6 +19,7 @@ gem 'puma', '~> 3.7'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'jwt'
+gem 'active_model_serializers'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -44,7 +45,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # 1. user Signups
 #   bob
 #   bob@gmail.Comp
-#   adksflj 
+#   adksflj
 #   this.props.sighUp(email, passworkd)
 #
 #   funcgion signup(email, password){
