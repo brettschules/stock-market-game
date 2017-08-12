@@ -17,7 +17,9 @@ export default function (AccessComponents, inheritedProps) {
       }
     }
     render(){
-      return <AccessComponents {...this.props} />
+      return (
+        <AccessComponents {...this.props} />
+      )
     }
   }
 

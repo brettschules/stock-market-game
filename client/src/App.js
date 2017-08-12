@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
 import Auth from './authorize'
-import AuthAdapter from './authAdapter'
 import MainComponent from './containers/MainComponent'
-import WelcomePage from './containers/WelcomePage/WelcomePage'
+import WelcomePage from './containers/WelcomePage'
 import Login from './containers/WelcomePage/LoginFormModal'
 import { connect } from 'react-redux'
+import NavBar from './NavBar'
 
 
 class App extends Component{
@@ -20,14 +20,18 @@ class App extends Component{
 
   render(){
     return(
+      <div>
+      <NavBar />
       <Router>
         <div>
-           <Route path='/' render={() => <WelcomePage onLogout={this.handleLogout} /> } />
+           <Route exact path='/' render={() => <WelcomePage /> } />
             <Route path='/Profile' component={Auth(MainComponent)}  />
             <Route path='/login' render={()=> this.props.isLoggedIn ? <Redirect to="/Profile" /> : <Login /> } />
         </div>
       </Router>
+      </div>
     )
+
   }
 }
 

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import LoginFormModal from './LoginFormModal'
 
 export default class Name extends Component{
   constructor(){

@@ -1,6 +1,10 @@
-export const LOGIN = 'LOGIN'
+export const POSTLOGINPARAMS = 'POSTLOGINPARAMS'
+export const AUTH = 'AUTH'
+export const LOGOUT = 'LOGOUT'
+
 
 const BASEURL = 'http://localhost:3000/api/v1'
+
 
 function headers () {
   return {
@@ -12,7 +16,7 @@ function headers () {
 
 export function Login(loginParams) {
   return function(dispatch) {
-    dispatch({type: 'POSTLOGINPARAMS'})
+    dispatch({type: POSTLOGINPARAMS})
     return fetch(`${BASEURL}/login`,{
       method: 'POST',
       headers: headers(),
@@ -23,8 +27,14 @@ export function Login(loginParams) {
         console.log("do nothing")
       } else {
         localStorage.setItem('jwt', resp.token)
-        dispatch({type: 'AUTH', resp: resp})
+        dispatch({type: AUTH, resp: resp})
       }
     })
+  }
+}
+
+export function Logout() {
+  return {
+    type: LOGOUT
   }
 }
