@@ -10,14 +10,6 @@ import NavBar from './NavBar'
 
 class App extends Component{
 
-  handleLogout = () => {
-    localStorage.clear()
-    this.setState({auth: {
-      isLoggedIn: false,
-      user: ''
-    }})
-  }
-
   render(){
     return(
       <div>
@@ -25,8 +17,8 @@ class App extends Component{
       <Router>
         <div>
            <Route exact path='/' render={() => <WelcomePage /> } />
-            <Route path='/Profile' component={Auth(MainComponent)}  />
-            <Route path='/login' render={()=> this.props.isLoggedIn ? <Redirect to="/Profile" /> : <Login /> } />
+            <Route exact path='/profile' component={Auth(MainComponent)}  />
+            <Route exact path='/login' render={()=> this.props.isLoggedIn ? <Redirect to="/Profile" /> : <Login /> } />
         </div>
       </Router>
       </div>
