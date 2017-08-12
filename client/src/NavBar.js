@@ -25,6 +25,7 @@ class NavBar extends Component{
           <Menu.Item name='Home'  />
           <Menu.Item name='About'  />
           <Menu.Item name='Contact'  />
+          {this.props.isLoggedIn ?
           <Menu.Menu position="right">
             <Menu.Item>
               <Button onClick={this.handleLogoutClick}>
@@ -32,11 +33,18 @@ class NavBar extends Component{
               </Button>
            </Menu.Item>
           </Menu.Menu>
+          : ""
+        }
        </Menu>
       </div>
-
     )
   }
 }
 
-export default connect(null, {Logout})(NavBar)
+function mapStateToProps(state) {
+  return {
+    isLoggedIn: state.postLogin.auth.isLoggedIn
+  }
+}
+
+export default connect(mapStateToProps, {Logout})(NavBar)
