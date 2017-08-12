@@ -1,7 +1,7 @@
  import React, { Component } from 'react';
  import { Card, Icon, Image } from 'semantic-ui-react'
 
-export default class Name extends Component{
+export default class UserProfile extends Component{
   constructor(){
     super()
   }

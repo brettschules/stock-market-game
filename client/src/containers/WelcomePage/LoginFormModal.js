@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+import { Button, Modal } from 'semantic-ui-react'
+import { connect } from 'react-redux'
+import {bindActionCreators} from 'redux'
+import {Login} from '../../actions/WelcomePage/index'
 
-export default class LoginForm extends Component {
+class LoginForm extends Component {
   constructor(){
     super()
     this.state = {
@@ -17,13 +21,13 @@ export default class LoginForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    this.props.onSendLogin(this.state)
+    // this.props.onSendLogin(this.state)
+    this.props.Login(this.state)
     this.setState({username: '', password: ''})
   }
 
   render(){
     return(
-      <div>
         <form onSubmit={this.handleSubmit}>
           <label>
             Username
@@ -35,9 +39,7 @@ export default class LoginForm extends Component {
           <input type="text" name="password" value={this.state.password} onChange={this.handleOnChange}/>
           <button type="submit">Login </button>
         </form>
-        <h1>Login</h1>
-      </div>
-
     )
   }
 }
+export default connect(null, {Login})(LoginForm)
