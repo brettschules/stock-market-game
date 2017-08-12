@@ -10,25 +10,6 @@ import { connect } from 'react-redux'
 
 class App extends Component{
 
-  //
-  // onLogin = (loginParams) => {
-  //   AuthAdapter.login(loginParams)
-  //   .then(res => {
-  //     if(res.error){
-  //       console.log("do nothing")
-  //     }else{
-  //       localStorage.setItem('jwt', res.token)
-  //       this.setState({
-  //         auth:{
-  //           isLoggedIn: true,
-  //           user: res.username,
-  //           name: res.name
-  //         }
-  //       })
-  //     }
-  //   })
-  // }
-
   handleLogout = () => {
     localStorage.clear()
     this.setState({auth: {
@@ -36,11 +17,7 @@ class App extends Component{
       user: ''
     }})
   }
-  // <Route path='/' render={()=> <Nav onLogout={this.handleLogout.bind(this)} /> } />
-  // <Route path='/' render={() => <MainComponent onLogout={this.handleLogout} /> } />
 
-
-// onSendLogin={this.onLogin.bind(this)}
   render(){
     return(
       <Router>
