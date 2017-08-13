@@ -12,7 +12,7 @@ class UserPortfolioBody extends Component{
   constructor(){
     super()
     this.state ={
-      tickers: ["KO", "APU", "VZ", "BABA", "AAPL"]
+      tickers: ["KO", "APU", "VZ", "BABA", "AAPL", "XXII"]
     }
   }
 

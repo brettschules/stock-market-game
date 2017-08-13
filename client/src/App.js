@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
 import Auth from './authorize'
-import MainComponent from './containers/MainComponent'
+import MainPage from './containers/MainPage'
 import WelcomePage from './containers/WelcomePage'
 import Login from './containers/WelcomePage/LoginFormModal'
 import { connect } from 'react-redux'
 import NavBar from './NavBar'
+import InvestPage from './containers/InvestPage'
 
 
 class App extends Component{
@@ -17,8 +18,9 @@ class App extends Component{
       <Router>
         <div>
            <Route exact path='/' render={() => <WelcomePage /> } />
-            <Route exact path='/profile' component={Auth(MainComponent)}  />
+            <Route exact path='/profile' component={Auth(MainPage)}  />
             <Route exact path='/login' render={()=> this.props.isLoggedIn ? <Redirect to="/Profile" /> : <Login /> } />
+            <Route exact path='/invest' component={Auth(InvestPage)} />
         </div>
       </Router>
       </div>

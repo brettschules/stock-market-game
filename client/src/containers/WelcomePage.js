@@ -4,10 +4,7 @@ import LoginFormModal from './WelcomePage/LoginFormModal'
 import {Link } from 'react-router-dom'
 
 
-export default class Name extends Component{
-  constructor(){
-    super()
-  }
+export default class WelcomePage extends Component{
 
   render(){
     return(

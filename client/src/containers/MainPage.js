@@ -6,7 +6,7 @@ import { Grid, Image } from 'semantic-ui-react'
 
 import '../App.css'
 
-class MainComponent extends Component {
+class MainPage extends Component {
   render() {
     return (
       <div>
@@ -28,4 +28,4 @@ class MainComponent extends Component {
   }
 }
 
-export default MainComponent;
+export default MainPage;
